@@ -15,12 +15,13 @@ class WordGenerator(Resource):
         number_of_words = args.get('number_of_words')
 
         response = requests.get(f'https://api.datamuse.com/words?rel_trg={word}')
+        print(response)
 
         list_of_related_words = []
 
         for x in range(int(number_of_words)):
             list_of_related_words.append(response.json()[x]['word'])
-
+            print(list_of_related_words)
         return list_of_related_words
 
 api.add_resource(WordGenerator, '/word_generator')
