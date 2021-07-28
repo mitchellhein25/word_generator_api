@@ -106,4 +106,4 @@ class WordGenerator(Resource):
 api.add_resource(WordGenerator, '/word_generator')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=5000, ssl_context='adhoc')
